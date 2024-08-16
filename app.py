@@ -76,7 +76,7 @@ dropoff_latitude = st.number_input("Insert a droppoff lat", value=None, placehol
 passenger_count = st.number_input('passenger count', min_value=None, max_value=None)
 
 payload = {
-    'pickup_datetime':pickup_datetime+" "+mytime,
+    'pickup_datetime':str(pickup_datetime)+" "+str(mytime),
     'pickup_longitude':pickup_longitude,
     'pickup_latitude':pickup_latitude,
     'dropoff_longitude':dropoff_longitude,
