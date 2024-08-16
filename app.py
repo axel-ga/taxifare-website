@@ -83,5 +83,4 @@ payload = {
     }
 
 response = requests.get(url,params=payload).json()
-print(response.status_code)
 st.write(response, unsafe_allow_html=False)
