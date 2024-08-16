@@ -37,9 +37,15 @@ if url == 'https://taxifare.lewagon.ai/predict':
     st.markdown('Maybe you want to use your own API for the prediction, not the one provided by Le Wagon...')
 
 '''
+pickup_datetime = st.date_input("pickup date", value="default_value_today")
+pickup_longitude = st.number_input("Insert a pickup lon", value=None, placeholder="Type a number..."
+pickup_latitude = st.number_input("Insert a pickup lat", value=None, placeholder="Type a number..."
+dropoff_longitude = st.number_input("Insert a dropoff lon", value=None, placeholder="Type a number..."
+dropoff_latitude = st.number_input("Insert a droppoff lat", value=None, placeholder="Type a number..."
+passenger_count = st.number_input('passenger count', min_value=None, max_value=None)
 
 2. Let's build a dictionary containing the parameters for our API...
-params = {
+payload = {
     'pickup_datetime':pickup_datetime,
     'pickup_longitude':pickup_longitude,
     'pickup_latitude':pickup_latitude,
@@ -52,7 +58,7 @@ params = {
 
 response = requests.get(url,params=payload).json()
 print(response.status_code)
-
+st.write(response, unsafe_allow_html=False)
 4. Let's retrieve the prediction from the **JSON** returned by the API...
 
 ## Finally, we can display the prediction to the user
