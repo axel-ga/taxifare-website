@@ -67,7 +67,7 @@ st.write(response, unsafe_allow_html=False)
 url = 'https://taxifare.lewagon.ai/predict'
 
 pickup_datetime = st.date_input("pickup date", value="default_value_today")
-pickup_datetime = st.time_input("pickup time", value="now", step=0:15:00)
+pickup_datetime = st.time_input("pickup time", value="now")
 pickup_longitude = st.number_input("Insert a pickup lon", value=None, placeholder="Type a number...")
 pickup_latitude = st.number_input("Insert a pickup lat", value=None, placeholder="Type a number...")
 dropoff_longitude = st.number_input("Insert a dropoff lon", value=None, placeholder="Type a number...")
